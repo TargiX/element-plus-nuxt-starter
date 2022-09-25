@@ -14,3 +14,12 @@ a {
   font-weight: 400;
   color: var(--el-color-primary);
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.l-inner--narrow {
+    max-width: 980px;
+    margin: 0 auto;
+}

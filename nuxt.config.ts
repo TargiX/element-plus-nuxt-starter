@@ -1,9 +1,10 @@
-import { defineNuxtConfig } from 'nuxt'
+
 import ElementPlus from 'unplugin-element-plus/vite'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   // meta
+  target: 'static',
   meta: {
     title: 'Element Plus + Nuxt 3',
     meta: [
@@ -19,11 +20,15 @@ export default defineNuxtConfig({
 
   // css
   css: ['~/assets/scss/index.scss'],
-
-  // build
   build: {
+    postcss: {
+      postcssOptions: require("./postcss.config.js"),
+    },
     transpile: ['element-plus/es'],
   },
+
+  // build
+
 
   typescript: {
     strict: true,
